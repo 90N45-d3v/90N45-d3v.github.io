@@ -23,7 +23,7 @@ function wakeUp() {
 let hint = "How about entering \"help\" as command?";
 
 document.addEventListener("keyup", function(event) {
-	if (event.code === 'Enter') {
+	if (event.key === 'Enter' || event.code === 'Enter' || event.which === '13') {
 
 		let command = document.getElementById("stdin").value;
 		document.getElementById("stdin").value = "";
