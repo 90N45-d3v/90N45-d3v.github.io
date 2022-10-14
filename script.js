@@ -10,8 +10,11 @@ function wakeUp() {
 	window.addEventListener('scroll', resetTime, true);
 
 	function alertUser() {
-		document.getElementById("stdout").innerHTML = "<code style=\"color: #149414; animation-name: fade-in; animation-duration: 2s\">Wake up, Neo...</code><code style=\"color: #149414; animation-name: fade-in; animation-duration: 3s\"><br><small>The Matrix has you...</small></code><code style=\"color: #149414; animation-name: fade-in; animation-duration: 4s\"><br><small>Follow the white Hat.</small></code><code style=\"color: #149414; animation-name: fade-in; animation-duration: 5s\"><br><br><small><strong>Knock, Knock,</strong> Neo.</small></code>";
+		let snowflake_check = document.getElementById("stdout").innerHTML;
+		if (snowflake_check != "<iframe class=\"border border-success rounded\" src=\"https://snowflake.torproject.org/embed.html\" width=\"320\" height=\"255\" frameborder=\"0\" scrolling=\"no\"></iframe>") {
+			document.getElementById("stdout").innerHTML = "<code style=\"color: #149414; animation-name: fade-in; animation-duration: 2s\">Wake up, Neo...</code><code style=\"color: #149414; animation-name: fade-in; animation-duration: 3s\"><br><small>The Matrix has you...</small></code><code style=\"color: #149414; animation-name: fade-in; animation-duration: 4s\"><br><small>Follow the white Hat.</small></code><code style=\"color: #149414; animation-name: fade-in; animation-duration: 5s\"><br><br><small><strong>Knock, Knock,</strong> Neo.</small></code>";
 		}
+	}
 
 		function resetTime() {
 			clearTimeout(time);
@@ -59,7 +62,7 @@ function clear() {
 }
 
 function snowflake() {
-	document.getElementById("stdout").innerHTML = "<iframe class=\"border border-success rounded\" src=\"https://snowflake.torproject.org/embed.html\" width=\"320\" height=\"255\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+	document.getElementById("stdout").innerHTML = "<iframe class=\"border border-success rounded\" src=\"https://snowflake.torproject.org/embed.html\" width=\"320\" height=\"260\" frameborder=\"0\" scrolling=\"no\"></iframe>";
 }
 
 function nslookup() {
