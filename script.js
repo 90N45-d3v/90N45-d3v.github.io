@@ -30,6 +30,7 @@ document.addEventListener("keyup", function(event) {
 
 		if (command == "help" || command == "Help") {help()}
 		else if (command == "clear" || command == "Clear") {clear()}
+		else if (command == "snowflake" || command == "Snowflake") {snowflake()}
 		else if (command == "nslookup" || command == "Nslookup") {nslookup()}
 		else if (command == "ps" || command == "Ps") {ps()}
 		else if (command == "ls" || command == "Ls") {ls()}
@@ -50,11 +51,15 @@ document.addEventListener("keyup", function(event) {
 });
 
 function help() {
-	document.getElementById("stdout").innerHTML = "<pre><code style=\"color: #149414;\"><strong>COMMANDS</strong><small></br>help \t\t- List commands</br>clear \t\t- Clear the terminal</br>nslookup \t- Lookup my social accounts</br>ps \t\t- My projects, tools, goals etc.</br>ls \t\t- List files and directories within the current directory</br>cd DIR\t\t- Change directory (just \"cd\" goes back to ⁓/)</br>cat FILE\t- Show file</br>cp \t\t- Show copyright</small></code></pre></br>";
+	document.getElementById("stdout").innerHTML = "<pre><code style=\"color: #149414;\"><strong>COMMANDS</strong><small></br>help \t\t- List commands</br>clear \t\t- Clear the terminal</br>nslookup \t- Lookup my social accounts</br>ps \t\t- My projects, tools, goals etc.</br>ls \t\t- List files and directories within the current directory</br>cd DIR\t\t- Change directory (just \"cd\" goes back to ⁓/)</br>cat FILE\t- Show file</br>snowflake \t- Fight against censorship by running Tor Project's Snowflake proxy from here</br>cp \t\t- Show copyright</small></code></pre></br>";
 }
 
 function clear() {
 	document.getElementById("stdout").innerHTML = "";
+}
+
+function snowflake() {
+	document.getElementById("stdout").innerHTML = "<iframe class=\"border border-success rounded\" src=\"https://snowflake.torproject.org/embed.html\" width=\"320\" height=\"255\" frameborder=\"0\" scrolling=\"no\"></iframe>";
 }
 
 function nslookup() {
