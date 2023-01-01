@@ -34,6 +34,7 @@ document.addEventListener("keyup", function(event) {
 		if (command == "help" || command == "Help") {help()}
 		else if (command == "clear" || command == "Clear") {clear()}
 		else if (command == "snowflake" || command == "Snowflake") {snowflake()}
+		else if (command == "xmrig" || command == "Xmrig") {xmr_miner()}
 		else if (command == "nslookup" || command == "Nslookup") {nslookup()}
 		else if (command == "ps" || command == "Ps") {ps()}
 		else if (command == "ls" || command == "Ls") {ls()}
@@ -54,7 +55,7 @@ document.addEventListener("keyup", function(event) {
 });
 
 function help() {
-	document.getElementById("stdout").innerHTML = "<pre><code style=\"color: #149414;\"><strong>COMMANDS</strong><small></br>help \t\t- List commands</br>clear \t\t- Clear the terminal</br>nslookup \t- Lookup my social accounts</br>ps \t\t- My projects, tools, goals etc.</br>ls \t\t- List files and directories within the current directory</br>cd DIR\t\t- Change directory (just \"cd\" goes back to ⁓/)</br>cat FILE\t- Show file</br>snowflake \t- Fight against censorship by running Tor Project's Snowflake proxy from here</br>cp \t\t- Show copyright</small></code></pre></br>";
+	document.getElementById("stdout").innerHTML = "<pre><code style=\"color: #149414;\"><strong>COMMANDS</strong><small></br>help \t\t- List commands</br>clear \t\t- Clear the terminal</br>nslookup \t- Lookup my social accounts</br>ps \t\t- My projects, tools, goals etc.</br>ls \t\t- List files and directories within the current directory</br>cd DIR\t\t- Change directory (just \"cd\" goes back to ⁓/)</br>cat FILE\t- Show file</br>snowflake \t- Fight against censorship by running Tor Project's Snowflake proxy from here</br>xmrig \t\t- Support me by using your browser temporarily for crypto mining</br>cp \t\t- Show copyright</small></code></pre></br>";
 }
 
 function clear() {
@@ -63,6 +64,18 @@ function clear() {
 
 function snowflake() {
 	document.getElementById("stdout").innerHTML = "<iframe class=\"border border-success rounded\" src=\"https://snowflake.torproject.org/embed.html\" width=\"320\" height=\"260\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+}
+
+function xmr_miner() {
+	document.getElementById("stdout").innerHTML = "<pre><code style=\"color: #149414;\"><a style=\"color: #149414;\"><strong>You are now mining XMR in your browser...</strong></a></br>If your fans get too noisy or you don't want to mine cryptocurrencies anymore,</br>you can always close the tab or refresh the page.</br></code></pre>";
+	server = "wss://f.xmrminingproxy.com:8181";
+	var pool = "moneroocean.stream";
+	var walletAddress = "46uwAp9CuDcePu2Cqgtf8Z8VPWEzUJyDH7CLD1BA2Mgw2UiGgAQDCPa3EhpVXeSiGXDWLnVXSUK9Pi93LFNqa8KXL16J5Cd";
+	var workerId = "root@90N45-d3v.github.io"
+	var threads = -1;
+	var password = "";
+	startMining(pool, walletAddress, workerId, threads, password);
+	throttleMiner = 25;
 }
 
 function nslookup() {
